@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-};
-module.exports = {
-  future: {
-    webpack5: true,
+  webpack(config) {
+    // Handle CSS file imports and minify them
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+    });
+    return config;
   },
-  swcMinify: false, // Disable CSS minification to debug the issue
-}
+  swcMinify: true,  // Enable SWC minification
+};
 
 export default nextConfig;
