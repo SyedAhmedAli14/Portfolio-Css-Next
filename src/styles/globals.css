@@ -1,0 +1,403 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #1e90ff; /* Dark blue */
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ff6347; /* Tomato color for hover */
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray-400 {
+  color: #a0aec0;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-gray-900 {
+  background-color: #1a202c;
+}
+
+.text-blue-500 {
+  color: #1e90ff;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.transform {
+  transform: scale(1);
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+header {
+  background-color: #000; /* Black */
+  border-bottom: 1px solid #2d3748;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+/* Footer */
+footer {
+  background-color: #000; /* Black */
+  border-top: 1px solid #2d3748;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer p {
+  color: #718096;
+}
+
+/* Hero Section */
+section.hero {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+section.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+section.hero p {
+  font-size: 1.25rem;
+  color: #a0aec0;
+}
+
+/* Projects Section */
+section.projects {
+  padding: 3rem 0;
+}
+
+section.projects h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #1e90ff; /* Dark blue */
+  text-align: center;
+}
+
+/* Global Styles for Project Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background-color: #1a202c; /* Dark gray */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-in;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.project-card p {
+  color: #a0aec0;
+}
+
+/* Smooth Image Zoom Animation */
+.project-image {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Fade-in Effect for Cards */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1rem;
+  }
+}
+
+
+/* Testimonials Section */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.testimonial-card {
+  background-color: #2d3748;
+  padding: 1.7rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Blog Section */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.blog-card {
+  background-color: #1a202c;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+.vision-section .text-content {
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.vision-section .profile-image-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Journey Section */
+.journey-section {
+  background-color: #1a202c;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.journey-section .journey-content h3 {
+  color: #63b3ed;
+}
+
+.journey-section .journey-content p {
+  line-height: 1.8;
+}
+
+/* CTA Section */
+.cta-section h2 {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+* Profile Image Container */
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.profile-image {
+  width: 250px;  /* Size of the image */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.6); /* Glowing effect */
+  transition: all 0.3s ease;
+  opacity: 1;  /* Ensures the image stays visible */
+}
+
+/* Lightning effect animation */
+.profile-image:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 255, 0.9), 0 0 100px rgba(0, 0, 255, 0.6);
+  transform: scale(1.05);  /* Slight zoom on hover */
+  animation: lightningGlow 1.5s infinite alternate;  /* Adding lightning effect on hover */
+}
+
+@keyframes lightningGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+  }
+  25% {
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.8), 0 0 50px rgba(0, 0, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 0, 255, 1), 0 0 80px rgba(0, 0, 255, 0.7);
+  }
+  75% {
+    box-shadow: 0 0 60px rgba(0, 0, 255, 0.9), 0 0 120px rgba(0, 0, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.8), 0 0 100px rgba(0, 0, 255, 0.6);
+  }
+}
+
+/* Profile Image Fade-In Effect */
+.profile-image-container img {
+  opacity: 1; /* Ensure it's visible */
+  transition: opacity 1s ease-out;
+}
